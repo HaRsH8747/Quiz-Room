@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_home_screen"
+    tools:context=".HomeActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_home_text"
+        app:layout_constraintBottom_toTopOf="@+id/glHorizontal2"
+        app:layout_constraintEnd_toStartOf="@+id/glVertical2"
+        app:layout_constraintStart_toStartOf="@+id/glVertical1"
+        app:layout_constraintTop_toTopOf="@+id/glHorizontal1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <TextView
+        android:id="@+id/tvQLevelNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="Let's Play!"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/heading_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="Level up your sharp brain"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/info_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQLevelNumber" />
+
+    <ImageView
+        android:id="@+id/ivSound"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/sound_on"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPlay"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@drawable/play_now_background"
+        android:fontFamily="@font/nunitosans_bold"
+        android:text="Play now"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text"
+        android:translationZ="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/glHorizontal3"
+        app:layout_constraintEnd_toStartOf="@+id/glVertical2"
+        app:layout_constraintStart_toStartOf="@+id/glVertical1"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <!--        <com.google.android.material.button.MaterialButton-->
+    <!--            android:id="@+id/btnAbout"-->
+    <!--            style="?attr/materialButtonOutlinedStyle"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="73dp"-->
+    <!--            android:fontFamily="@font/nunitosans_bold"-->
+    <!--            android:text="About"-->
+    <!--            android:textAllCaps="false"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="@dimen/button_text"-->
+    <!--            app:cornerRadius="20dp"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/glHorizontal3"-->
+    <!--            app:layout_constraintEnd_toStartOf="@+id/glVertical2"-->
+    <!--            app:layout_constraintStart_toStartOf="@+id/glVertical1"-->
+    <!--            app:strokeColor="@color/white"-->
+    <!--            app:strokeWidth="3dp" />-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVertical2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".83" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

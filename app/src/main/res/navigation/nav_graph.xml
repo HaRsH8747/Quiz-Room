@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.quizroom.categorySection.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_levelsFragment"
+            app:destination="@id/levelsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/levelsFragment"
+        android:name="com.example.quizroom.levelSection.LevelsFragment"
+        android:label="fragment_levels"
+        tools:layout="@layout/fragment_levels" >
+        <action
+            android:id="@+id/action_levelsFragment_to_questionActivity"
+            app:destination="@id/questionActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="apiKey"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/questionActivity"
+        android:name="com.example.quizroom.questionSection.QuestionActivity"
+        android:label="activity_question"
+        tools:layout="@layout/activity_question" />
+    <activity
+        android:id="@+id/winActivity"
+        android:name="com.example.quizroom.resultSection.WinActivity"
+        android:label="activity_fail"
+        tools:layout="@layout/activity_win" />
+    <activity
+        android:id="@+id/failActivity"
+        android:name="com.example.quizroom.resultSection.FailActivity"
+        android:label="FailActivity"
+        tools:layout="@layout/activity_fail" />
+
+</navigation>

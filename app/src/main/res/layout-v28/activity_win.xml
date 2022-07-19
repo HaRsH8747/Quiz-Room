@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clWin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_quiz_screen"
+    tools:context=".resultSection.WinActivity">
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/btnOption3"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content">-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.138" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_win_text"
+        app:layout_constraintBottom_toTopOf="@+id/glHorizontal1"
+        app:layout_constraintEnd_toStartOf="@+id/glVertical1"
+        app:layout_constraintStart_toStartOf="@+id/glVertical"
+        app:layout_constraintTop_toTopOf="@id/glHorizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.442" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/win_logo"
+        app:layout_constraintBottom_toTopOf="@+id/glHorizontal2"
+        app:layout_constraintEnd_toStartOf="@+id/glVertical1"
+        app:layout_constraintStart_toStartOf="@+id/glVertical"
+        app:layout_constraintTop_toTopOf="@+id/glHorizontal1" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="Congrats!!!"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="@dimen/heading_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans_regular"
+            android:text="You have earned "
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="@dimen/info_text"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/tvWinCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans_regular"
+            android:text="+1000"
+            android:textColor="#FFC107"
+            android:textFontWeight="700"
+            android:textSize="@dimen/info_text"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosans_regular"
+            android:text=" free coins!"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="@dimen/info_text"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWinCoins"
+            app:layout_constraintStart_toEndOf="@+id/tvWinCoins" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShare"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/play_now_background"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="Share it"
+        android:textAllCaps="false"
+        android:textFontWeight="700"
+        android:textSize="@dimen/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--    </ScrollView>-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNewQuiz"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="280dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nunitosans_regular"
+        android:text="Take a new quiz"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="@dimen/button_text"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/glHorizontal3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnShare"
+        app:layout_constraintVertical_bias="0"
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.923" />
+
+    <ImageView
+        android:id="@+id/btnBack4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_back_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glHorizontal3" />
+
+    <ImageView
+        android:id="@+id/btnHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_home_button"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/glVertical1"
+        app:layout_constraintTop_toBottomOf="@+id/glHorizontal3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
