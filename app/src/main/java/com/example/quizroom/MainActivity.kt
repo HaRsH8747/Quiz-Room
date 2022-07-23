@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity(){
                         finish()
                     }
                 }
-
                 override fun onFailure(call: Call<Categories>, t: Throwable) {
                     Log.d("CLEAR","MainActivity: ${t.message}")
                     Toast.makeText(this@MainActivity,"Unable to fetch data!",Toast.LENGTH_SHORT).show()

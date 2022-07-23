@@ -2,12 +2,14 @@ package com.example.quizroom.resultSection
 
 import android.app.Activity
 import android.app.Dialog
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.format.DateFormat
@@ -19,6 +21,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.airbnb.lottie.LottieAnimationView
 import com.example.quizroom.BuildConfig
@@ -29,14 +32,12 @@ import com.example.quizroom.databinding.ActivityWinBinding
 import com.example.quizroom.utils.AppPref
 import com.example.quizroom.utils.ConnectionLiveData
 import com.example.quizroom.utils.Constants.Companion.currentRightAnswers
+import com.google.android.play.core.review.ReviewManagerFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.IOException
-import androidx.lifecycle.Observer
-import com.google.android.play.core.review.ReviewManagerFactory
-import com.google.android.play.core.review.model.ReviewErrorCode
 import java.util.*
 
 
@@ -61,23 +62,6 @@ class WinActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
-//        val manager = ReviewManagerFactory.create(this)
-//        val request = manager.requestReviewFlow()
-//        request.addOnCompleteListener { task ->
-//            if (task.isSuccessful) {
-//                // We got the ReviewInfo object
-//                val reviewInfo = task.result
-//                val flow = manager.launchReviewFlow(this, reviewInfo)
-//                flow.addOnCompleteListener { _ ->
-//                    // The flow has finished. The API does not indicate whether the user
-//                    // reviewed or not, or even whether the review dialog was shown. Thus, no
-//                    // matter the result, we continue our app flow.
-//                }
-//            } else {
-//                // There was some problem, log or handle the error code.
-//                Toast.makeText(this,"Review Failed",Toast.LENGTH_SHORT).show()
-//            }
-//        }
         addNetworkListener(this)
         progressDialog = Dialog(this)
         progressDialog.setContentView(R.layout.progress_circular)
@@ -111,6 +95,40 @@ class WinActivity : AppCompatActivity() {
         }
         binding.btnBack4.setOnClickListener{ onBackPressed() }
         binding.btnNewQuiz.setOnClickListener{ onBackPressed() }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        rateApplication()
+    }
+
+    private fun rateApplication(){
+        val manager = ReviewManagerFactory.create(this)
+        val request = manager.requestReviewFlow()
+        request.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Log.d("CLEAR","request Successful")
+                val reviewInfo = task.result
+                val flow = manager.launchReviewFlow(this, reviewInfo)
+                flow.addOnCompleteListener {
+                    Log.d("CLEAR","launch Successful")
+                }
+            } else {
+                goToPlayStore()
+            }
+        }
+    }
+
+    private fun goToPlayStore() {
+        val uri = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)
+        val goToMarket = Intent(Intent.ACTION_VIEW, uri)
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+        try {
+            startActivity(goToMarket)
+        } catch (e: ActivityNotFoundException) {
+            startActivity(Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)))
+        }
     }
 
     override fun onBackPressed() {
