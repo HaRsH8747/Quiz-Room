@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.airbnb.lottie.LottieAnimationView
 import com.quizroom.HomeActivity
 import com.quizroom.questionSection.QuestionActivity
@@ -19,7 +18,7 @@ import com.quizroom.R
 import com.quizroom.databinding.ActivityFailBinding
 import com.quizroom.utils.AppPref
 import com.quizroom.utils.ConnectionLiveData
-import com.quizroom.utils.Constants.Companion.currentRightAnswers
+import com.quizroom.utils.Utils.Companion.currentRightAnswers
 
 class FailActivity : AppCompatActivity() {
 

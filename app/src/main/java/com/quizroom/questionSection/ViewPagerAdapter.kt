@@ -14,8 +14,8 @@ import com.airbnb.lottie.LottieAnimationView
 import com.quizroom.R
 import com.quizroom.models.Question
 import com.quizroom.utils.AppPref
-import com.quizroom.utils.Constants.Companion.currentRightAnswers
-import com.quizroom.utils.Constants.Companion.isAudioEnabled
+import com.quizroom.utils.Utils.Companion.currentRightAnswers
+import com.quizroom.utils.Utils.Companion.isAudioEnabled
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.squareup.picasso.Picasso
 

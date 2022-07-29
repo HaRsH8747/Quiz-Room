@@ -1,6 +1,6 @@
 package com.quizroom.api
 
-import com.quizroom.utils.Constants.Companion.BASE_URL
+import com.quizroom.utils.Utils.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

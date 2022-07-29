@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.quizroom.R
 import com.quizroom.databinding.FragmentLevelsBinding
 import com.quizroom.models.Level
-import com.quizroom.utils.Constants.Companion.levelsResponse
+import com.quizroom.utils.Utils.Companion.levelsResponse
 
 class LevelsFragment : Fragment() {
 

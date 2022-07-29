@@ -18,9 +18,9 @@ import com.quizroom.api.RetrofitInstance
 import com.quizroom.models.Level
 import com.quizroom.models.Questions
 import com.quizroom.utils.AppPref
-import com.quizroom.utils.Constants.Companion.currentLevelId
-import com.quizroom.utils.Constants.Companion.currentLevelNo
-import com.quizroom.utils.Constants.Companion.questionsResponse
+import com.quizroom.utils.Utils.Companion.currentLevelId
+import com.quizroom.utils.Utils.Companion.currentLevelNo
+import com.quizroom.utils.Utils.Companion.questionsResponse
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

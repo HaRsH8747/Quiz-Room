@@ -4,7 +4,8 @@ import com.quizroom.models.Categories
 import com.quizroom.models.Levels
 import com.quizroom.models.Questions
 
-class Constants {
+class Utils {
+
     companion object{
         const val BASE_URL = "https://invisionicl.com/mobileapp/wp-json/quizroom/"
         lateinit var categoryResponse: Categories

@@ -11,7 +11,6 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.airbnb.lottie.LottieAnimationView
 import com.quizroom.QuizApp
 import com.quizroom.R
@@ -21,10 +20,10 @@ import com.quizroom.utils.AppPref
 import com.quizroom.databinding.ActivityQuestionBinding
 import com.quizroom.models.Question
 import com.quizroom.utils.ConnectionLiveData
-import com.quizroom.utils.Constants.Companion.currentLevelId
-import com.quizroom.utils.Constants.Companion.currentLevelNo
-import com.quizroom.utils.Constants.Companion.currentRightAnswers
-import com.quizroom.utils.Constants.Companion.questionsResponse
+import com.quizroom.utils.Utils.Companion.currentLevelId
+import com.quizroom.utils.Utils.Companion.currentLevelNo
+import com.quizroom.utils.Utils.Companion.currentRightAnswers
+import com.quizroom.utils.Utils.Companion.questionsResponse
 
 class QuestionActivity : AppCompatActivity() {
 

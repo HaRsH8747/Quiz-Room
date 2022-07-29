@@ -20,7 +20,6 @@ import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.airbnb.lottie.LottieAnimationView
 import com.quizroom.BuildConfig
@@ -30,7 +29,7 @@ import com.quizroom.R
 import com.quizroom.databinding.ActivityWinBinding
 import com.quizroom.utils.AppPref
 import com.quizroom.utils.ConnectionLiveData
-import com.quizroom.utils.Constants.Companion.currentRightAnswers
+import com.quizroom.utils.Utils.Companion.currentRightAnswers
 import com.google.android.play.core.review.ReviewManagerFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

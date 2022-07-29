@@ -12,12 +12,11 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.airbnb.lottie.LottieAnimationView
 import com.quizroom.api.RetrofitInstance
 import com.quizroom.models.Categories
 import com.quizroom.utils.ConnectionLiveData
-import com.quizroom.utils.Constants.Companion.categoryResponse
+import com.quizroom.utils.Utils.Companion.categoryResponse
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

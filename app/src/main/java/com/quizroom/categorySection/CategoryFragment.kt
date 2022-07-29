@@ -13,7 +13,7 @@ import com.quizroom.R
 import com.quizroom.databinding.FragmentCategoryBinding
 import com.quizroom.models.Categories
 import com.quizroom.models.Category
-import com.quizroom.utils.Constants.Companion.categoryResponse
+import com.quizroom.utils.Utils.Companion.categoryResponse
 import retrofit2.Response
 
 class CategoryFragment : Fragment() {

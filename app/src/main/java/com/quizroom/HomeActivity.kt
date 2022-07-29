@@ -11,12 +11,11 @@ import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.airbnb.lottie.LottieAnimationView
 import com.quizroom.QuizApp.Companion.musicPlayer
 import com.quizroom.databinding.ActivityHomeBinding
 import com.quizroom.utils.ConnectionLiveData
-import com.quizroom.utils.Constants.Companion.isAudioEnabled
+import com.quizroom.utils.Utils.Companion.isAudioEnabled
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.InstallStateUpdatedListener

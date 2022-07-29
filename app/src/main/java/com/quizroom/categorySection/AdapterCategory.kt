@@ -2,6 +2,7 @@ package com.quizroom.categorySection
 
 import android.app.Dialog
 import android.content.Context
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,16 +14,19 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import com.quizroom.R
 import com.quizroom.api.RetrofitInstance
 import com.quizroom.models.Category
 import com.quizroom.models.Levels
-import com.quizroom.utils.Constants.Companion.currentCategory
-import com.quizroom.utils.Constants.Companion.levelsResponse
+import com.quizroom.utils.Utils
+import com.quizroom.utils.Utils.Companion.currentCategory
+import com.quizroom.utils.Utils.Companion.levelsResponse
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,6 +44,7 @@ class AdapterCategory(
     var apiKey: String
     private lateinit var result: Call<Levels>
     private var progressDialog: Dialog
+    private var httpClient: OkHttpClient? = null
 
     init {
         this.apiKey = apiKey
@@ -88,7 +93,16 @@ class AdapterCategory(
             )
         }
         holder.cvContainer.requestLayout()
-        Picasso.get().load(categoryArrayList[position].icon).into(holder.ivCategory)
+
+        if(categoryArrayList[position].icon.contains(".svg")){
+            GlideToVectorYou
+                .init()
+                .with(context)
+                .setPlaceHolder(R.drawable.sports_ctg,R.drawable.sports_ctg)
+                .load(Uri.parse(categoryArrayList[position].icon),holder.ivCategory)
+        }else{
+            Picasso.get().load(categoryArrayList[position].icon).into(holder.ivCategory)
+        }
         holder.cvContainer.setOnClickListener {
             progressDialog.show()
             getLevels(position,it)

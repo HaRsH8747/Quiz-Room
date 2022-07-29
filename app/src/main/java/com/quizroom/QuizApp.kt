@@ -5,7 +5,7 @@ import android.app.Application
 import android.content.IntentFilter
 import android.media.MediaPlayer
 import android.os.Bundle
-import com.quizroom.utils.Constants.Companion.isAudioEnabled
+import com.quizroom.utils.Utils.Companion.isAudioEnabled
 
 class QuizApp: Application(), Application.ActivityLifecycleCallbacks {
 
